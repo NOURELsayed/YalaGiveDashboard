@@ -95,10 +95,10 @@ class Login extends Component {
   //         this.props.history.push('/signup'); 
   //       }
   //       else {
-  //         this.props.history.push('/UserAction');
+  //         this.props.history.push('/userAction');
   //       }
   //   })
-    this.props.history.push('/userAction');
+    // this.props.history.push('/userAction');
 }
 
   render(){
@@ -146,8 +146,7 @@ class Login extends Component {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me" />
 
-          <Button 
-            onClick={this.handleSubmit} 
+          <Link to="/useraction" ><Button 
             disabled={isLoading}
             fullWidth 
             variant="contained" 
@@ -155,7 +154,7 @@ class Login extends Component {
             className={classes.button}>
               { isLoading && <i className="fa fa-refresh fa-spin"></i> }
             Sign In
-          </Button>
+          </Button></Link>
 
         <Grid container>
           <Grid item xs>
