@@ -1,0 +1,2682 @@
+{
+  "contractName": "YallaGiveAdmins",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "YgAdminAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "YgAdminRemoved",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isYgAdmin",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addYgAdmin",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceYgAdmin",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addYgAdmin\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceYgAdmin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isYgAdmin\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"YgAdminAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"account\",\"type\":\"address\"}],\"name\":\"YgAdminRemoved\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/youssef/Desktop/yallagive/tokenbackend/contracts/YallaGiveAdmins.sol\":\"YallaGiveAdmins\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/youssef/Desktop/yallagive/tokenbackend/contracts/YallaGiveAdmins.sol\":{\"keccak256\":\"0xbdc917f7de9154705799f0fd125f9f9c5dea30aeddc17d4d3227674f470bc2f0\",\"urls\":[\"bzzr://a803a9104ff1c13603fa4ef70d47f7d677f5d0294f8b037766792501430aef02\"]},\"openzeppelin-solidity/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzzr://bd34c1ce05b5b2b3a62fc02e160f6805b1cadd476854664f433c685b2fda8dad\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061002333640100000000610028810204565b6101da565b6100406000826401000000006102df61007782021704565b604051600160a060020a038216907f52146dba950c4a287537dffa5b464afbcd7823a1e235d66fbe81640c9223eed890600090a250565b61008a828264010000000061011b810204565b156100f657604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f526f6c65733a206163636f756e7420616c72656164792068617320726f6c6500604482015290519081900360640190fd5b600160a060020a0316600090815260209190915260409020805460ff19166001179055565b6000600160a060020a03821615156101ba57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602260248201527f526f6c65733a206163636f756e7420697320746865207a65726f20616464726560448201527f7373000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b50600160a060020a03166000908152602091909152604090205460ff1690565b610437806101e96000396000f3fe6080604052600436106100565763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663587f3067811461005b57806368374113146100a2578063e01f2e0f146100b9575b600080fd5b34801561006757600080fd5b5061008e6004803603602081101561007e57600080fd5b5035600160a060020a03166100ec565b604080519115158252519081900360200190f35b3480156100ae57600080fd5b506100b7610184565b005b3480156100c557600080fd5b5061008e600480360360208110156100dc57600080fd5b5035600160a060020a031661018f565b60006100f73361018f565b1515610173576040805160e560020a62461bcd02815260206004820152602160248201527f4f6e6c792061646d696e2063616e2063616c6c20746869732066756e6374696f60448201527f6e00000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b61017c826101a7565b506001919050565b61018d336101ef565b565b60006101a1818363ffffffff61023716565b92915050565b6101b860008263ffffffff6102df16565b604051600160a060020a038216907f52146dba950c4a287537dffa5b464afbcd7823a1e235d66fbe81640c9223eed890600090a250565b61020060008263ffffffff61036316565b604051600160a060020a038216907f8617b00bac52224142e452ef876a70c250aca46df3bb2f368982dfeec9edb04390600090a250565b6000600160a060020a03821615156102bf576040805160e560020a62461bcd02815260206004820152602260248201527f526f6c65733a206163636f756e7420697320746865207a65726f20616464726560448201527f7373000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b50600160a060020a03166000908152602091909152604090205460ff1690565b6102e98282610237565b1561033e576040805160e560020a62461bcd02815260206004820152601f60248201527f526f6c65733a206163636f756e7420616c72656164792068617320726f6c6500604482015290519081900360640190fd5b600160a060020a0316600090815260209190915260409020805460ff19166001179055565b61036d8282610237565b15156103e9576040805160e560020a62461bcd02815260206004820152602160248201527f526f6c65733a206163636f756e7420646f6573206e6f74206861766520726f6c60448201527f6500000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b600160a060020a0316600090815260209190915260409020805460ff1916905556fea165627a7a72305820017bbd87fdd1aa354023cd25bf4b0fc45a8c1670d7af84f25e49abfbe9247f600029",
+  "deployedBytecode": "0x6080604052600436106100565763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663587f3067811461005b57806368374113146100a2578063e01f2e0f146100b9575b600080fd5b34801561006757600080fd5b5061008e6004803603602081101561007e57600080fd5b5035600160a060020a03166100ec565b604080519115158252519081900360200190f35b3480156100ae57600080fd5b506100b7610184565b005b3480156100c557600080fd5b5061008e600480360360208110156100dc57600080fd5b5035600160a060020a031661018f565b60006100f73361018f565b1515610173576040805160e560020a62461bcd02815260206004820152602160248201527f4f6e6c792061646d696e2063616e2063616c6c20746869732066756e6374696f60448201527f6e00000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b61017c826101a7565b506001919050565b61018d336101ef565b565b60006101a1818363ffffffff61023716565b92915050565b6101b860008263ffffffff6102df16565b604051600160a060020a038216907f52146dba950c4a287537dffa5b464afbcd7823a1e235d66fbe81640c9223eed890600090a250565b61020060008263ffffffff61036316565b604051600160a060020a038216907f8617b00bac52224142e452ef876a70c250aca46df3bb2f368982dfeec9edb04390600090a250565b6000600160a060020a03821615156102bf576040805160e560020a62461bcd02815260206004820152602260248201527f526f6c65733a206163636f756e7420697320746865207a65726f20616464726560448201527f7373000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b50600160a060020a03166000908152602091909152604090205460ff1690565b6102e98282610237565b1561033e576040805160e560020a62461bcd02815260206004820152601f60248201527f526f6c65733a206163636f756e7420616c72656164792068617320726f6c6500604482015290519081900360640190fd5b600160a060020a0316600090815260209190915260409020805460ff19166001179055565b61036d8282610237565b15156103e9576040805160e560020a62461bcd02815260206004820152602160248201527f526f6c65733a206163636f756e7420646f6573206e6f74206861766520726f6c60448201527f6500000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b600160a060020a0316600090815260209190915260409020805460ff1916905556fea165627a7a72305820017bbd87fdd1aa354023cd25bf4b0fc45a8c1670d7af84f25e49abfbe9247f600029",
+  "sourceMap": "85:901:8:-;;;274:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;302:23:8;314:10;302:11;;;;:23;:::i;:::-;85:901;;750:111;803:21;:8;816:7;803:12;;;;;;:21;:::i;:::-;835;;-1:-1:-1;;;;;835:21:8;;;;;;;;750:111;:::o;260:175:9:-;337:18;341:4;347:7;337:3;;;;:18;:::i;:::-;336:19;328:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;401:20:9;:11;:20;;;;;;;;;;;:27;;-1:-1:-1;;401:27:9;424:4;401:27;;;260:175::o;779:200::-;851:4;-1:-1:-1;;;;;875:21:9;;;;867:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;952:20:9;:11;:20;;;;;;;;;;;;;;;779:200::o;85:901:8:-;;;;;;;",
+  "deployedSourceMap": "85:901:8:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;551:120;;8:9:-1;5:2;;;30:1;27;20:12;5:2;551:120:8;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;551:120:8;-1:-1:-1;;;;;551:120:8;;;;;;;;;;;;;;;;;;;;;675:71;;8:9:-1;5:2;;;30:1;27;20:12;5:2;675:71:8;;;;;;445:102;;8:9:-1;5:2;;;30:1;27;20:12;5:2;445:102:8;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;445:102:8;-1:-1:-1;;;;;445:102:8;;;551:120;618:4;371:21;381:10;371:9;:21::i;:::-;363:66;;;;;;;-1:-1:-1;;;;;363:66:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;629:20;641:7;629:11;:20::i;:::-;-1:-1:-1;662:4:8;551:120;;;:::o;675:71::-;715:26;730:10;715:14;:26::i;:::-;675:71::o;445:102::-;502:4;521:21;502:4;534:7;521:21;:12;:21;:::i;:::-;514:28;445:102;-1:-1:-1;;445:102:8:o;750:111::-;803:21;:8;816:7;803:21;:12;:21;:::i;:::-;835;;-1:-1:-1;;;;;835:21:8;;;;;;;;750:111;:::o;865:119::-;921:24;:8;937:7;921:24;:15;:24;:::i;:::-;956:23;;-1:-1:-1;;;;;956:23:8;;;;;;;;865:119;:::o;779:200:9:-;851:4;-1:-1:-1;;;;;875:21:9;;;;867:68;;;;;-1:-1:-1;;;;;867:68:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;952:20:9;:11;:20;;;;;;;;;;;;;;;779:200::o;260:175::-;337:18;341:4;347:7;337:3;:18::i;:::-;336:19;328:63;;;;;-1:-1:-1;;;;;328:63:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;401:20:9;:11;:20;;;;;;;;;;;:27;;-1:-1:-1;;401:27:9;424:4;401:27;;;260:175::o;510:180::-;589:18;593:4;599:7;589:3;:18::i;:::-;581:64;;;;;;;-1:-1:-1;;;;;581:64:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;655:20:9;678:5;655:20;;;;;;;;;;;:28;;-1:-1:-1;;655:28:9;;;510:180::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"openzeppelin-solidity/contracts/access/Roles.sol\";\n\ncontract YallaGiveAdmins {\n  using Roles for Roles.Role;\n\n  event YgAdminAdded(address indexed account);\n  event YgAdminRemoved(address indexed account);\n\n  Roles.Role private YgAdmins;\n\n  constructor() public { \n    _addYgAdmin(msg.sender);\n  }\n\n  modifier onlyYgAdmin() {\n    require(isYgAdmin(msg.sender),\"Only admin can call this function\");\n    _;\n  }\n\n  function isYgAdmin(address account) public view returns (bool) {\n    return YgAdmins.has(account);\n  }\n\n  function addYgAdmin(address account) public onlyYgAdmin   returns (bool){\n    _addYgAdmin(account);\n    return true;\n  }\n\n  function renounceYgAdmin() public {\n    _removeYgAdmin(msg.sender);\n  }\n\n  function _addYgAdmin(address account) internal {\n    YgAdmins.add(account);\n    emit YgAdminAdded(account);\n  }\n\n  function _removeYgAdmin(address account) internal {\n    YgAdmins.remove(account);\n    emit YgAdminRemoved(account);\n  }\n}\n",
+  "sourcePath": "/home/youssef/Desktop/yallagive/tokenbackend/contracts/YallaGiveAdmins.sol",
+  "ast": {
+    "absolutePath": "/home/youssef/Desktop/yallagive/tokenbackend/contracts/YallaGiveAdmins.sol",
+    "exportedSymbols": {
+      "YallaGiveAdmins": [
+        1487
+      ]
+    },
+    "id": 1488,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1381,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:8"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/access/Roles.sol",
+        "file": "openzeppelin-solidity/contracts/access/Roles.sol",
+        "id": 1382,
+        "nodeType": "ImportDirective",
+        "scope": 1488,
+        "sourceUnit": 1569,
+        "src": "25:58:8",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1487,
+        "linearizedBaseContracts": [
+          1487
+        ],
+        "name": "YallaGiveAdmins",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1385,
+            "libraryName": {
+              "contractScope": null,
+              "id": 1383,
+              "name": "Roles",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1568,
+              "src": "120:5:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Roles_$1568",
+                "typeString": "library Roles"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "114:27:8",
+            "typeName": {
+              "contractScope": null,
+              "id": 1384,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1494,
+              "src": "130:10:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$1494_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1389,
+            "name": "YgAdminAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1388,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1387,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1389,
+                  "src": "164:23:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1386,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "164:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "163:25:8"
+            },
+            "src": "145:44:8"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1393,
+            "name": "YgAdminRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1392,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1391,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1393,
+                  "src": "213:23:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1390,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "213:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "212:25:8"
+            },
+            "src": "192:46:8"
+          },
+          {
+            "constant": false,
+            "id": 1395,
+            "name": "YgAdmins",
+            "nodeType": "VariableDeclaration",
+            "scope": 1487,
+            "src": "242:27:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$1494_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1394,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1494,
+              "src": "242:10:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$1494_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 1403,
+              "nodeType": "Block",
+              "src": "295:35:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1399,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2494,
+                          "src": "314:3:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1400,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "314:10:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 1398,
+                      "name": "_addYgAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1470,
+                      "src": "302:11:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1401,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "302:23:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1402,
+                  "nodeType": "ExpressionStatement",
+                  "src": "302:23:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1404,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1396,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "285:2:8"
+            },
+            "returnParameters": {
+              "id": 1397,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "295:0:8"
+            },
+            "scope": 1487,
+            "src": "274:56:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1415,
+              "nodeType": "Block",
+              "src": "357:84:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 1408,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2494,
+                              "src": "381:3:8",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1409,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "381:10:8",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 1407,
+                          "name": "isYgAdmin",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1429,
+                          "src": "371:9:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 1410,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "371:21:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c792061646d696e2063616e2063616c6c20746869732066756e6374696f6e",
+                        "id": 1411,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "393:35:8",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e0ef19aa67a8b89b19419c8977a6a75d04286a47014bf7a3d2ea537634352c8b",
+                          "typeString": "literal_string \"Only admin can call this function\""
+                        },
+                        "value": "Only admin can call this function"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_e0ef19aa67a8b89b19419c8977a6a75d04286a47014bf7a3d2ea537634352c8b",
+                          "typeString": "literal_string \"Only admin can call this function\""
+                        }
+                      ],
+                      "id": 1406,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        2497,
+                        2498
+                      ],
+                      "referencedDeclaration": 2498,
+                      "src": "363:7:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1412,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "363:66:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1413,
+                  "nodeType": "ExpressionStatement",
+                  "src": "363:66:8"
+                },
+                {
+                  "id": 1414,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "435:1:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1416,
+            "name": "onlyYgAdmin",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1405,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "354:2:8"
+            },
+            "src": "334:107:8",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1428,
+              "nodeType": "Block",
+              "src": "508:39:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1425,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1418,
+                        "src": "534:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1423,
+                        "name": "YgAdmins",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1395,
+                        "src": "521:8:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$1494_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 1424,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1567,
+                      "src": "521:12:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$1494_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$1494_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 1426,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "521:21:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 1422,
+                  "id": 1427,
+                  "nodeType": "Return",
+                  "src": "514:28:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1429,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1418,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1429,
+                  "src": "464:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1417,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "464:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "463:17:8"
+            },
+            "returnParameters": {
+              "id": 1422,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1421,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1429,
+                  "src": "502:4:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1420,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "502:4:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "501:6:8"
+            },
+            "scope": 1487,
+            "src": "445:102:8",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1444,
+              "nodeType": "Block",
+              "src": "623:48:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1439,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1431,
+                        "src": "641:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1438,
+                      "name": "_addYgAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1470,
+                      "src": "629:11:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1440,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "629:20:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1441,
+                  "nodeType": "ExpressionStatement",
+                  "src": "629:20:8"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 1442,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "662:4:8",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 1437,
+                  "id": 1443,
+                  "nodeType": "Return",
+                  "src": "655:11:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1445,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1434,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1433,
+                  "name": "onlyYgAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1416,
+                  "src": "595:11:8",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "595:11:8"
+              }
+            ],
+            "name": "addYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1432,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1431,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1445,
+                  "src": "571:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "570:17:8"
+            },
+            "returnParameters": {
+              "id": 1437,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1436,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1445,
+                  "src": "618:4:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1435,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "618:4:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "617:6:8"
+            },
+            "scope": 1487,
+            "src": "551:120:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1453,
+              "nodeType": "Block",
+              "src": "709:37:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1449,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2494,
+                          "src": "730:3:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1450,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "730:10:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 1448,
+                      "name": "_removeYgAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1486,
+                      "src": "715:14:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1451,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "715:26:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1452,
+                  "nodeType": "ExpressionStatement",
+                  "src": "715:26:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1454,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "renounceYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1446,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "699:2:8"
+            },
+            "returnParameters": {
+              "id": 1447,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "709:0:8"
+            },
+            "scope": 1487,
+            "src": "675:71:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1469,
+              "nodeType": "Block",
+              "src": "797:64:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1462,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1456,
+                        "src": "816:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1459,
+                        "name": "YgAdmins",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1395,
+                        "src": "803:8:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$1494_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 1461,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1519,
+                      "src": "803:12:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$1494_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$1494_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 1463,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "803:21:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1464,
+                  "nodeType": "ExpressionStatement",
+                  "src": "803:21:8"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1466,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1456,
+                        "src": "848:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1465,
+                      "name": "YgAdminAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1389,
+                      "src": "835:12:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1467,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "835:21:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1468,
+                  "nodeType": "EmitStatement",
+                  "src": "830:26:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1470,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_addYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1457,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1456,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1470,
+                  "src": "771:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1455,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "771:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "770:17:8"
+            },
+            "returnParameters": {
+              "id": 1458,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "797:0:8"
+            },
+            "scope": 1487,
+            "src": "750:111:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1485,
+              "nodeType": "Block",
+              "src": "915:69:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1478,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1472,
+                        "src": "937:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1475,
+                        "name": "YgAdmins",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1395,
+                        "src": "921:8:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$1494_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 1477,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1543,
+                      "src": "921:15:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$1494_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$1494_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 1479,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "921:24:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1480,
+                  "nodeType": "ExpressionStatement",
+                  "src": "921:24:8"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1482,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1472,
+                        "src": "971:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1481,
+                      "name": "YgAdminRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1393,
+                      "src": "956:14:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1483,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "956:23:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1484,
+                  "nodeType": "EmitStatement",
+                  "src": "951:28:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1486,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_removeYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1473,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1472,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1486,
+                  "src": "889:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1471,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "889:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "888:17:8"
+            },
+            "returnParameters": {
+              "id": 1474,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "915:0:8"
+            },
+            "scope": 1487,
+            "src": "865:119:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1488,
+        "src": "85:901:8"
+      }
+    ],
+    "src": "0:987:8"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/youssef/Desktop/yallagive/tokenbackend/contracts/YallaGiveAdmins.sol",
+    "exportedSymbols": {
+      "YallaGiveAdmins": [
+        1487
+      ]
+    },
+    "id": 1488,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1381,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:8"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/access/Roles.sol",
+        "file": "openzeppelin-solidity/contracts/access/Roles.sol",
+        "id": 1382,
+        "nodeType": "ImportDirective",
+        "scope": 1488,
+        "sourceUnit": 1569,
+        "src": "25:58:8",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1487,
+        "linearizedBaseContracts": [
+          1487
+        ],
+        "name": "YallaGiveAdmins",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1385,
+            "libraryName": {
+              "contractScope": null,
+              "id": 1383,
+              "name": "Roles",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1568,
+              "src": "120:5:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Roles_$1568",
+                "typeString": "library Roles"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "114:27:8",
+            "typeName": {
+              "contractScope": null,
+              "id": 1384,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1494,
+              "src": "130:10:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$1494_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1389,
+            "name": "YgAdminAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1388,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1387,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1389,
+                  "src": "164:23:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1386,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "164:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "163:25:8"
+            },
+            "src": "145:44:8"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1393,
+            "name": "YgAdminRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1392,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1391,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1393,
+                  "src": "213:23:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1390,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "213:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "212:25:8"
+            },
+            "src": "192:46:8"
+          },
+          {
+            "constant": false,
+            "id": 1395,
+            "name": "YgAdmins",
+            "nodeType": "VariableDeclaration",
+            "scope": 1487,
+            "src": "242:27:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$1494_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 1394,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1494,
+              "src": "242:10:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$1494_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 1403,
+              "nodeType": "Block",
+              "src": "295:35:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1399,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2494,
+                          "src": "314:3:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1400,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "314:10:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 1398,
+                      "name": "_addYgAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1470,
+                      "src": "302:11:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1401,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "302:23:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1402,
+                  "nodeType": "ExpressionStatement",
+                  "src": "302:23:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1404,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1396,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "285:2:8"
+            },
+            "returnParameters": {
+              "id": 1397,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "295:0:8"
+            },
+            "scope": 1487,
+            "src": "274:56:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1415,
+              "nodeType": "Block",
+              "src": "357:84:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 1408,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2494,
+                              "src": "381:3:8",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1409,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "381:10:8",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 1407,
+                          "name": "isYgAdmin",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1429,
+                          "src": "371:9:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 1410,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "371:21:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c792061646d696e2063616e2063616c6c20746869732066756e6374696f6e",
+                        "id": 1411,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "393:35:8",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e0ef19aa67a8b89b19419c8977a6a75d04286a47014bf7a3d2ea537634352c8b",
+                          "typeString": "literal_string \"Only admin can call this function\""
+                        },
+                        "value": "Only admin can call this function"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_e0ef19aa67a8b89b19419c8977a6a75d04286a47014bf7a3d2ea537634352c8b",
+                          "typeString": "literal_string \"Only admin can call this function\""
+                        }
+                      ],
+                      "id": 1406,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        2497,
+                        2498
+                      ],
+                      "referencedDeclaration": 2498,
+                      "src": "363:7:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1412,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "363:66:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1413,
+                  "nodeType": "ExpressionStatement",
+                  "src": "363:66:8"
+                },
+                {
+                  "id": 1414,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "435:1:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1416,
+            "name": "onlyYgAdmin",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1405,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "354:2:8"
+            },
+            "src": "334:107:8",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1428,
+              "nodeType": "Block",
+              "src": "508:39:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1425,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1418,
+                        "src": "534:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1423,
+                        "name": "YgAdmins",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1395,
+                        "src": "521:8:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$1494_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 1424,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1567,
+                      "src": "521:12:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$1494_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$1494_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 1426,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "521:21:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 1422,
+                  "id": 1427,
+                  "nodeType": "Return",
+                  "src": "514:28:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1429,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1418,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1429,
+                  "src": "464:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1417,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "464:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "463:17:8"
+            },
+            "returnParameters": {
+              "id": 1422,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1421,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1429,
+                  "src": "502:4:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1420,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "502:4:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "501:6:8"
+            },
+            "scope": 1487,
+            "src": "445:102:8",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1444,
+              "nodeType": "Block",
+              "src": "623:48:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1439,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1431,
+                        "src": "641:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1438,
+                      "name": "_addYgAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1470,
+                      "src": "629:11:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1440,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "629:20:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1441,
+                  "nodeType": "ExpressionStatement",
+                  "src": "629:20:8"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 1442,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "662:4:8",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 1437,
+                  "id": 1443,
+                  "nodeType": "Return",
+                  "src": "655:11:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1445,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 1434,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1433,
+                  "name": "onlyYgAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1416,
+                  "src": "595:11:8",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "595:11:8"
+              }
+            ],
+            "name": "addYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1432,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1431,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1445,
+                  "src": "571:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "570:17:8"
+            },
+            "returnParameters": {
+              "id": 1437,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1436,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1445,
+                  "src": "618:4:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1435,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "618:4:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "617:6:8"
+            },
+            "scope": 1487,
+            "src": "551:120:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1453,
+              "nodeType": "Block",
+              "src": "709:37:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 1449,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2494,
+                          "src": "730:3:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1450,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "730:10:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 1448,
+                      "name": "_removeYgAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1486,
+                      "src": "715:14:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1451,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "715:26:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1452,
+                  "nodeType": "ExpressionStatement",
+                  "src": "715:26:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1454,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "renounceYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1446,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "699:2:8"
+            },
+            "returnParameters": {
+              "id": 1447,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "709:0:8"
+            },
+            "scope": 1487,
+            "src": "675:71:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1469,
+              "nodeType": "Block",
+              "src": "797:64:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1462,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1456,
+                        "src": "816:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1459,
+                        "name": "YgAdmins",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1395,
+                        "src": "803:8:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$1494_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 1461,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1519,
+                      "src": "803:12:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$1494_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$1494_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 1463,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "803:21:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1464,
+                  "nodeType": "ExpressionStatement",
+                  "src": "803:21:8"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1466,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1456,
+                        "src": "848:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1465,
+                      "name": "YgAdminAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1389,
+                      "src": "835:12:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1467,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "835:21:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1468,
+                  "nodeType": "EmitStatement",
+                  "src": "830:26:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1470,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_addYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1457,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1456,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1470,
+                  "src": "771:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1455,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "771:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "770:17:8"
+            },
+            "returnParameters": {
+              "id": 1458,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "797:0:8"
+            },
+            "scope": 1487,
+            "src": "750:111:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1485,
+              "nodeType": "Block",
+              "src": "915:69:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1478,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1472,
+                        "src": "937:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1475,
+                        "name": "YgAdmins",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1395,
+                        "src": "921:8:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$1494_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 1477,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1543,
+                      "src": "921:15:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$1494_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$1494_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 1479,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "921:24:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1480,
+                  "nodeType": "ExpressionStatement",
+                  "src": "921:24:8"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1482,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1472,
+                        "src": "971:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1481,
+                      "name": "YgAdminRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1393,
+                      "src": "956:14:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 1483,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "956:23:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1484,
+                  "nodeType": "EmitStatement",
+                  "src": "951:28:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1486,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_removeYgAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1473,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1472,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1486,
+                  "src": "889:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1471,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "889:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "888:17:8"
+            },
+            "returnParameters": {
+              "id": 1474,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "915:0:8"
+            },
+            "scope": 1487,
+            "src": "865:119:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1488,
+        "src": "85:901:8"
+      }
+    ],
+    "src": "0:987:8"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Linux.g++"
+  },
+  "networks": {
+    "4": {
+      "events": {
+        "0x52146dba950c4a287537dffa5b464afbcd7823a1e235d66fbe81640c9223eed8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "YgAdminAdded",
+          "type": "event",
+          "signature": "0x52146dba950c4a287537dffa5b464afbcd7823a1e235d66fbe81640c9223eed8"
+        },
+        "0x8617b00bac52224142e452ef876a70c250aca46df3bb2f368982dfeec9edb043": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "YgAdminRemoved",
+          "type": "event",
+          "signature": "0x8617b00bac52224142e452ef876a70c250aca46df3bb2f368982dfeec9edb043"
+        }
+      },
+      "links": {},
+      "address": "0xA46FeAc5C588f7F4E08aA97b76904377b99958a2",
+      "transactionHash": "0xbb12c0911a71e34b06c3d98b6fae6b8366824d59826983efc8dfb5c9352d7a05"
+    }
+  },
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-10-24T08:21:20.621Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
