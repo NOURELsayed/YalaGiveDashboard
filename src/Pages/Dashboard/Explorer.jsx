@@ -4,6 +4,8 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Card, CardMedia, CardContent, CardActions, IconButton, Typography } from '@material-ui/core'
 import FavoriteIcon from '@material-ui/icons/Favorite'
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 import Picture from '../../assets/images/hands.jpg'
 
@@ -34,14 +36,18 @@ const useStyles = makeStyles(theme => ({
     explorer:{
         display: 'flex',
     justifyContent: 'space-around',
-    }
+    },
+    button: {
+        margin: theme.spacing(1),
+        float:'right'
+      },
 
 }));
 
 export default function RecipeReviewCard() {
     const classes = useStyles();
     return (<div className={classes.explorer}>
-        <Card className={classes.card}>
+ <Card className={classes.card}>
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites" >
                     <FavoriteIcon />
@@ -50,39 +56,36 @@ export default function RecipeReviewCard() {
             <CardMedia
                 className={classes.media}
                 image={Picture}
-                title="Paella dish"
-            />
+                title="Paella dish" />
             <CardContent>
                 <Typography component="h3">
-                    User Name
+                User Name
                </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    This impressive paella is a perfect party dish and a fun meal to 
-                    cook together with your
-                    guests.
-                  </Typography>
+                    This impressive paella is a perfect party dish and a fun meal to cook together with your
+                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                </Typography>
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary" component="p">
                         Equilty offered
-                   </Typography>
+                    </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         seeking
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         Location
-                     </Typography>
+                   </Typography>
                 </div>
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary" component="p">
                         100$
-                     </Typography>
+                    </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         10.000$
-                     </Typography>
+                  </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-
                         Egypt
-                     </Typography>
+                 </Typography>
                 </div>
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary" component="p">
@@ -93,10 +96,15 @@ export default function RecipeReviewCard() {
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         Share price
-                  </Typography>
+                    </Typography>
                 </div>
             </CardContent>
-        </Card>
+         <Link to="/useraction">
+         <Button   variant="contained" color="primary" className={classes.button}>
+            Token details
+                    </Button>
+         </Link>  
+          </Card>
 
         <Card className={classes.card}>
             <CardActions disableSpacing>
@@ -150,6 +158,9 @@ export default function RecipeReviewCard() {
                     </Typography>
                 </div>
             </CardContent>
+            <Button variant="contained" color="primary" className={classes.button}>
+            Token details
+                    </Button>
           </Card>
 
         <Card className={classes.card}>
@@ -204,6 +215,9 @@ export default function RecipeReviewCard() {
                   </Typography>
                 </div>
             </CardContent>
+            <Button variant="contained" color="primary" className={classes.button}>
+                        Token details
+                    </Button>
         </Card>
     </div>
     );

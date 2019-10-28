@@ -7,52 +7,60 @@ import Theme from '../Helpers/Theme'
 import Error from '../Pages/Error/404'
 // import VerificationSteps from "../Pages/verificationSteps/verification"
 import UserAction from "../Pages/verificationSteps/userAction"
-
-const Login = lazy(() => import ('../Pages/Auth/login'));
-const Signup = lazy(() => import ('../Pages/Auth/signup'));
-const DashRoute = lazy(() => import ('./route'));
+import Login from "../Pages/Auth/login"
+import Signup from "../Pages/Auth/signup"
+import DashRoute from "../APP/route"
+// const Login = lazy(() => import ('../Pages/Auth/login'));
+// const Signup = lazy(() => import ('../Pages/Auth/signup'));
+// const DashRoute = lazy(() => import ('./route'));
 
 class App extends Component {
 
-  state = {
-    isAuth: false
-  }
-  componentDidMount() {
-    if(localStorage.getItem('token')) this.setState({isAuth: true})
-  }
-  logIn = () => {
-    this.setState({isAuth: true})
-  }
-  logOut = () => {
-    this.setState({isAuth: false})
-  }
+  // state = {
+  //   isAuth: false
+  // }
+  // componentDidMount() {
+  //   if(localStorage.getItem('token')) this.setState({isAuth: true})
+  // }
+  // logIn = () => {
+  //   this.setState({isAuth: true})
+  // }
+  // logOut = () => {
+  //   this.setState({isAuth: false})
+  // }
  
   render() { 
-    console.log(this.state);
+    // console.log(this.state);
     
-    const routes = this.state.isAuth 
-    ? ( 
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/useraction" component={UserAction} />
-        {/* <Route path="/verificationSteps" component={VerificationSteps} /> */}
-        <Route path="/dashboard" render={props => <DashRoute {...props} logOut={this.logOut} />} />
-        <Route component={Error} />
-      </Switch>
-    )
-    : (
-      <Switch>
-        <Route exact path="/" render={props => <Login {...props} logIn={this.logIn} />} />
-        <Route path="/signup" component={Signup} />
-        <Route component={Error} />
-      </Switch>
-    );
+    // const routes = this.state.isAuth 
+    // ? ( 
+      // <Switch>
+      //   <Route exact path="/" component={Login} />
+      //   <Route path="/signup" component={Signup} />
+      //   <Route path="/useraction" component={UserAction} />
+      //   {/* <Route path="/verificationSteps" component={VerificationSteps} /> */}
+      //   <Route path="/dashboard" render={props => <DashRoute {...props} logOut={this.logOut} />} />
+      //   <Route component={Error} />
+      // </Switch>
+    // )
+    // : (
+    //   <Switch>
+    //     <Route exact path="/" render={props => <Login {...props} logIn={this.logIn} />} />
+    //     <Route path="/signup" component={Signup} />
+    //     <Route component={Error} />
+    //   </Switch>
+    // );
     return (
     <Suspense fallback={<Loader />}>
       <Theme>
         <Router>
-          {routes}
+        <Switch>
+        <Route exact path="/" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/useraction" component={UserAction} />
+        <Route path="/dashboard" render={props => <DashRoute {...props} logOut={this.logOut} />} />
+        <Route component={Error} />
+      </Switch>
         </Router>
       </Theme>
     </Suspense>
