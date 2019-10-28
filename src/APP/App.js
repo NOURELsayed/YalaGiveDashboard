@@ -35,7 +35,7 @@ class App extends Component {
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/UserAction" component={UserAction } />
+        <Route path="/userAction" component={UserAction } />
         {/* <Route path="/verificationSteps" component={VerificationSteps} /> */}
         <Route path="/dashboard" render={props => <DashRoute {...props} logOut={this.logOut} />} />
         <Route component={Error} />

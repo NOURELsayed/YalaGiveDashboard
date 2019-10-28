@@ -98,7 +98,7 @@ class Login extends Component {
   //         this.props.history.push('/UserAction');
   //       }
   //   })
-    this.props.history.push('/UserAction');
+    this.props.history.push('/userAction');
 }
 
   render(){
