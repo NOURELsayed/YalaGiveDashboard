@@ -10,11 +10,11 @@ let accounts = [];
 let Service = {
   web3Provider: null,
   token: {},
-  init: function() {
+  init: async () => {
     return Service.initWeb3();
   },
 
-  initWeb3: function() {
+  initWeb3: async () => {
      // Modern dapp browsers...
      if (window.ethereum) {
       Service.web3Provider = window.ethereum;
@@ -42,16 +42,16 @@ let Service = {
     web3 = new Web3(Service.web3Provider);
     console.log("HTTP provider");
   }
-    return Service.initContract();
+    return await Service.initContract();
   },
 
-  initContract: function() {
+  initContract: async () => {
     // Get the necessary contract artifact file and instantiate it with truffle-contract.
     Service.token = contract(registrationArtifact, "0x95a833Ea4C552e2e4Da449e81d17688923902625");
 
     // Set the provider for our contract.
     Service.token.setProvider(Service.web3Provider);
-    return Service.getCurrentAccount();
+    return await Service.getCurrentAccount();
   },
   getCurrentAccount: async () => {
     accounts = await web3.eth.getAccounts();

@@ -18,7 +18,6 @@ import {
   ListItemIcon,
   ListItemText,
   Icon,
-  Button
 } from "@material-ui/core"
 
 import { compose } from "recompose"
@@ -121,7 +120,7 @@ class Layout extends Component {
   };
   handelClick = (props) => {
     localStorage.removeItem('token');
-    this.props.logOut();
+    // this.props.logOut();
     this.props.history.push("/");
   }
   render() {
@@ -156,14 +155,6 @@ class Layout extends Component {
             <Typography variant="h6" noWrap>
               {this.props.title}
             </Typography>
-
-            {/* logout button */}
-            <Button
-              size="medium"
-              className={classes.button}
-              onClick={() => {this.handelClick()}}> 
-                logout
-            </Button>
 
           </Toolbar>
         </AppBar>

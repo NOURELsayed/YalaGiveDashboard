@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 
 import { Card, TextField, CardHeader, Button, Grid, FormControlLabel, Checkbox } from "@material-ui/core"
 import { createStyles, withStyles  } from '@material-ui/core/styles'
-
-// import axios from 'axios'
+import Web3 from 'web3';
 
 import BackGround from '../../assets/background.jpg'
 
+window.Web3 = Web3;
+let { web3 } = window;
+let { ethereum } = window;  
+// let web3Provider = null;
 
 const styles = theme => 
   createStyles({
@@ -78,29 +81,27 @@ class Login extends Component {
     }
   }
 
-  handleSubmit = (event) => {
-  //   const { email, password } = this.state
-  //   const user = { 
-  //     'email': email, 
-  //     'password': password,
-  //   }
-
-  // axios.post('http://3.87.134.173:3000/authenticate', user)
-  //   .then((response) => {
-  //       this.setState({ isLoading: true })
-  //       localStorage.setItem('token', response.data.token)
-
-  //       if(response.data.token === undefined){
-  //         alert('you are not assigned to our community .. Please register and try again ..');
-  //         this.props.history.push('/signup'); 
-  //       }
-  //       else {
-  //         this.props.history.push('/userAction');
-  //       }
-  //   })
-    // this.props.history.push('/userAction');
-}
-
+  handleSubmit = async () => {
+      if (window.ethereum) {
+        web3 = new Web3(ethereum);
+        this.props.history.push('/useraction');
+        try {
+          ethereum.enable();
+          console.log('ethereum worked');
+        } catch (error) {
+          console.log('there is an error here');
+        }
+      }
+      else if (typeof web3 !== 'undefined') {
+        web3 = new Web3(web3.currentProvider);
+        console.log('old metamask provider');
+      }
+      else {
+            alert(
+              `please make sure that you have metamask account frist`
+            );
+          }
+    }
   render(){
     const {
       email,
@@ -146,7 +147,9 @@ class Login extends Component {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me" />
 
-          <Link to="/useraction" ><Button 
+          {/* <Link to="/useraction" > */}
+            <Button 
+          onClick={this.handleSubmit}
             disabled={isLoading}
             fullWidth 
             variant="contained" 
@@ -154,7 +157,8 @@ class Login extends Component {
             className={classes.button}>
               { isLoading && <i className="fa fa-refresh fa-spin"></i> }
             Sign In
-          </Button></Link>
+          </Button>
+          {/* </Link> */}
 
         <Grid container>
           <Grid item xs>
