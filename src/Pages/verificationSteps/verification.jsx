@@ -29,16 +29,15 @@ const useStyles = makeStyles(theme => ({
 export default function ValidationSteps() {
     const classes = useStyles();
     const [name, setName] = useState();
-    const [balance, setBalance] = useState();
+    // const [balance, setBalance] = useState();
     const mount = async () => {
         const account = await Ataa.Service.init();
         console.log("account", account);
         const name = await Ataa.Service.getName();
-        const balance = await Ataa.Service.getBalanceOf(account);
+        // const balance = await Ataa.Service.getBalanceOf(account);
         setName(name);
-        setBalance(balance);
+        // setBalance(balance);
         console.log(name);
-        console.log(balance);
 /*         const charity = await Charity.Service.getName();
         console.log("charity", charity); */
     };
@@ -81,7 +80,7 @@ export default function ValidationSteps() {
                 </Grid>
                 <Grid item xs>
                     <Typography variant="h4" >
-                    {balance}
+                    {/* {balance} */}
                     </Typography>
                 </Grid>
                 <Grid item xs>

@@ -2,10 +2,15 @@
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
-import { Card, CardMedia, CardContent, CardActions, IconButton, Typography } from '@material-ui/core'
+import { Card, CardMedia, CardContent, CardActions, IconButton, Typography} from '@material-ui/core'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 import Picture from '../../assets/images/hands.jpg'
 
@@ -44,8 +49,18 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-export default function RecipeReviewCard() {
+export default function Explorer() {
+    const [open, setOpen] = React.useState(false);
+    const [on, setOn] = React.useState(false);
     const classes = useStyles();
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+ 
     return (<div className={classes.explorer}>
  <Card className={classes.card}>
             <CardActions disableSpacing>
@@ -99,11 +114,30 @@ export default function RecipeReviewCard() {
                     </Typography>
                 </div>
             </CardContent>
-         <Link to="/useraction">
-         <Button   variant="contained" color="primary" className={classes.button}>
+         <Button variant="outlined" color="primary" onClick={handleClickOpen}
+            className={classes.button}>
             Token details
+            </Button> 
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description" >
+                    <DialogTitle id="alert-dialog-title">{"Token Details"}</DialogTitle>
+                    <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Let Google help apps determine location. This means sending anonymous location data to
+                        Google, even when no apps are running.
+                    </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                 <Link to='/dashboard/tokens'>
+                 <Button  color="primary">
+                    Buy Token
                     </Button>
-         </Link>  
+                     </Link>   
+                    </DialogActions>
+                </Dialog>
           </Card>
 
         <Card className={classes.card}>
@@ -158,9 +192,30 @@ export default function RecipeReviewCard() {
                     </Typography>
                 </div>
             </CardContent>
-            <Button variant="contained" color="primary" className={classes.button}>
+            <Button variant="outlined" color="primary" onClick={handleClickOpen}
+            className={classes.button}>
             Token details
+            </Button>
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description" >
+                    <DialogTitle id="alert-dialog-title">{"Token Details"}</DialogTitle>
+                    <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Let Google help apps determine location. This means sending anonymous location data to
+                        Google, even when no apps are running.
+                    </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                 <Link to='/dashboard/tokens'>
+                 <Button  color="primary">
+                    Buy Token
                     </Button>
+                     </Link>   
+                    </DialogActions>
+                </Dialog>
           </Card>
 
         <Card className={classes.card}>
@@ -215,9 +270,30 @@ export default function RecipeReviewCard() {
                   </Typography>
                 </div>
             </CardContent>
-            <Button variant="contained" color="primary" className={classes.button}>
-                        Token details
+         <Button variant="outlined" color="primary" onClick={handleClickOpen}
+            className={classes.button}>
+            Token details
+            </Button> 
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description" >
+                    <DialogTitle id="alert-dialog-title">{"Token Details"}</DialogTitle>
+                    <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Let Google help apps determine location. This means sending anonymous location data to
+                        Google, even when no apps are running.
+                    </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                 <Link to='/dashboard/tokens'>
+                 <Button  color="primary">
+                    Buy Token
                     </Button>
+                     </Link>   
+                    </DialogActions>
+                </Dialog>
         </Card>
     </div>
     );

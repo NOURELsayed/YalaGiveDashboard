@@ -7,10 +7,10 @@ import Web3 from 'web3';
 
 import BackGround from '../../assets/background.jpg'
 
+
 window.Web3 = Web3;
 let { web3 } = window;
 let { ethereum } = window;  
-// let web3Provider = null;
 
 const styles = theme => 
   createStyles({
@@ -39,7 +39,6 @@ const styles = theme =>
 })
 
 class Login extends Component {
-
   state =
   {
     email: '',
@@ -52,42 +51,13 @@ class Login extends Component {
   saveUserData = (token) => {
     localStorage.setItem(token)
   }
-
-  emailOnChange = (event) => {
-    const currentEmail = event.target.value
-    this.setState({ email: currentEmail })
-    const regex = new RegExp(/^([\w\-_.]+)@([\w]+)\.([\w]+)$/i)
-      if (regex.test(currentEmail)) {
-        this.setState({
-          emailError: false,
-        })
-      } 
-      else {
-        this.setState({
-          emailError: true,
-        })
-      }
-  }
-
-  passwordOnChange = (event) => {
-    const password = event.target.value
-    this.setState({ password })
-
-    if (password.length >= 4) {
-      this.setState({ passwordError: false })
-    } 
-    else {
-      this.setState({ passwordError: true })
-    }
-  }
-
   handleSubmit = async () => {
       if (window.ethereum) {
         web3 = new Web3(ethereum);
-        this.props.history.push('/useraction');
         try {
           ethereum.enable();
           console.log('ethereum worked');
+          this.props.history.push('/useraction');
         } catch (error) {
           console.log('there is an error here');
         }
@@ -97,16 +67,15 @@ class Login extends Component {
         console.log('old metamask provider');
       }
       else {
-            alert(
-              `please make sure that you have metamask account frist`
-            );
+            // alert(
+            //   `please make sure that you have metamask account frist`
+            // );
+            (window.confirm('please make sure that you have metamask account frist'))
           }
+          
     }
   render(){
     const {
-      email,
-      password,
-      emailError,
       isLoading
     } = this.state;
 
@@ -123,11 +92,6 @@ class Login extends Component {
             fullWidth
             id="email"
             label="Email Address"
-            autoComplete="email"
-            autoFocus
-            value={email}
-            error={emailError}
-            onChange={this.emailOnChange}
           />
 
           <TextField
@@ -138,9 +102,6 @@ class Login extends Component {
             label="Password"
             type="password"
             id="password"
-            autoComplete="current-password"
-            value={password}
-            onChange={this.passwordOnChange}
           />
           
           <FormControlLabel
