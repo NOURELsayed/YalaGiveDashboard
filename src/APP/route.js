@@ -8,9 +8,13 @@ import Leaderboard from "../Pages/Dashboard/leaderboard"
 import Investments from "../Pages/Dashboard/Investment"
 import Userprofile from "../Pages/Dashboard/userProfile"
 import Tokens from "../Pages/Dashboard/buytoken"
+import KYCform from "../Pages/Dashboard/KYC-form"
+import {
+  BrowserRouter as
+  Link,
+} from "react-router-dom";
 function DrewerRouters (props) {
-  
-  const title = "Yalla Give";
+  const title = <Link to="/">"Yalla Give"</Link>;
   const menuItems = [
     { path:"", title: "Dashboard", icon: "dashboard" },
     { path:"explorer", title: "Explorer", icon: "web"},
@@ -18,6 +22,7 @@ function DrewerRouters (props) {
     { path:"investments", title: "Investments", icon: "monetization_on"},
     { path:"userprofile", title: "Userprofile", icon: "person"},
     { path:"tokens", title: "Tokens", icon: "device_hub"},
+    { path:"kycform", title: "KYC", icon: "note"},
   ];
 
   return (
@@ -29,6 +34,7 @@ function DrewerRouters (props) {
           <Route exact path="/dashboard/investments" component={Investments} />
           <Route exact path="/dashboard/userprofile" component={Userprofile} />
           <Route exact path="/dashboard/tokens" component={Tokens} />
+          <Route exact path="/dashboard/kycform" component={KYCform} />
         </Switch>
       </Layout>
   )

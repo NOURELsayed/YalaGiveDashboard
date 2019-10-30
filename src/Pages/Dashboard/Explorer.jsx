@@ -131,11 +131,9 @@ export default function Explorer() {
                     </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                 <Link to='/dashboard/tokens'>
-                 <Button  color="primary">
+                 <Button  component={Link} to={'/dashboard/tokens'} color="primary">
                     Buy Token
-                    </Button>
-                     </Link>   
+                    </Button> 
                     </DialogActions>
                 </Dialog>
           </Card>
@@ -209,14 +207,12 @@ export default function Explorer() {
                     </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                 <Link to='/dashboard/tokens'>
-                 <Button  color="primary">
+                 <Button component={Link} to={'/dashboard/tokens'} color="primary">
                     Buy Token
-                    </Button>
-                     </Link>   
+                    </Button>   
                     </DialogActions>
                 </Dialog>
-          </Card>
+                 </Card>
 
         <Card className={classes.card}>
             <CardActions disableSpacing>
@@ -288,7 +284,7 @@ export default function Explorer() {
                     </DialogContent>
                     <DialogActions>
                  <Link to='/dashboard/tokens'>
-                 <Button  color="primary">
+                 <Button  component={Link} to={'/dashboard/tokens'} color="primary">
                     Buy Token
                     </Button>
                      </Link>   

@@ -18,6 +18,7 @@ import {
   ListItemIcon,
   ListItemText,
   Icon,
+  Button
 } from "@material-ui/core"
 
 import { compose } from "recompose"
@@ -97,7 +98,7 @@ const styles = theme => ({
   },
   bold: {
     fontWeight: 600
-  }
+  },
 });
 
 class Layout extends Component {
@@ -130,7 +131,7 @@ class Layout extends Component {
       location: { pathname }
     } = this.props;
     const username = "Admin";
-
+    // const BrowserHistory = require('react-router/lib/BrowserHistory').default;
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -155,7 +156,9 @@ class Layout extends Component {
             <Typography variant="h6" noWrap>
               {this.props.title}
             </Typography>
-
+            <Button component={Link} to={'/'} variant="outlined" color="primary" className={classes.button}>
+             Back
+          </Button>
           </Toolbar>
         </AppBar>
         <Drawer
