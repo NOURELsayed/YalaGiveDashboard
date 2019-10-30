@@ -10,7 +10,6 @@ import Login from "../Pages/Auth/login"
 import Signup from "../Pages/Auth/signup"
 import DashRoute from "../APP/route"
 
-
 class App extends Component {
 
   render() { 
