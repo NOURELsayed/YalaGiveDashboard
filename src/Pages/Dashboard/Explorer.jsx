@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Explorer() {
     const [open, setOpen] = React.useState(false);
-    const [on, setOn] = React.useState(false);
+    // const [on, setOn] = React.useState(false);
     const classes = useStyles();
     const handleClickOpen = () => {
       setOpen(true);
