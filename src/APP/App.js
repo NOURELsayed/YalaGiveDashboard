@@ -1,35 +1,73 @@
-import React, { Component, Suspense } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
+import React, { Component, Suspense, lazy  } from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Loader from '../components/loader'
 import Theme from '../Helpers/Theme'
-
 import Error from '../Pages/Error/404'
+import Explorer from '../Pages/Dashboard/Explorer'
+import Leaderboard from "../Pages/Dashboard/leaderboard"
+import Header from "../components/header"
 import UserAction from "../Pages/verificationSteps/userAction"
-import Login from "../Pages/Auth/login"
-import Signup from "../Pages/Auth/signup"
-import DashRoute from "../APP/route"
-
+const Login = lazy(() => import ('../Pages/Auth/login'));
+const Signup = lazy(() => import ('../Pages/Auth/signup'));
+const DashRoute = lazy(() => import ('./route'));
+const title = "Yalla Give"
 class App extends Component {
-
+  state = {
+    isAuth: false
+  }
+  
+  componentDidMount() {
+    if(localStorage.getItem('token')) this.setState({isAuth: true})
+  }
+  logIn = () => {
+    this.setState({isAuth: true})
+  }
+  logOut = () => {
+    this.setState({isAuth: false})
+  }
+ 
   render() { 
-
+    console.log(this.state);
+    
+    const routes = this.state.isAuth 
+    ? ( 
+      // <Header title={title}>
+      <Switch>
+        <Route exact path="/" component={Explorer} />
+        <Route exact path="/leaderboard" component={Leaderboard} />
+        <Route exact path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/useraction" component={UserAction } />
+        <Route path="/dashboard" render={props => <DashRoute {...props} logOut={this.logOut} />} />
+        <Route component={Error} />
+      </Switch>
+      // </Header>
+ 
+    )
+    : (
+      <Switch>
+        <Route exact path="/login" render={props => <Login {...props} logIn={this.logIn} />} />
+        <Route path="/signup" component={Signup} />
+        <Route component={Error} />
+      </Switch>
+    )
+  //  : (
+  //     <Switch>
+  //     <Route exact path="/login" component={Login} />
+  //     <Route path="/signup" component={Signup} />
+  //     <Route component={Error} />
+  //   </Switch>
+  //   )
     return (
     <Suspense fallback={<Loader />}>
       <Theme>
         <Router>
-        <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/useraction" component={UserAction} />
-        <Route path="/dashboard" render={props => <DashRoute {...props} logOut={this.logOut} />} />
-        <Route component={Error} />
-      </Switch>
+          {routes}
         </Router>
       </Theme>
     </Suspense>
   );
 }
 }
-
 export default App;

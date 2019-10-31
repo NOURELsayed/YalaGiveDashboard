@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom'
 
 import { Card, TextField, CardHeader, Button, Grid, FormControlLabel, Checkbox } from "@material-ui/core"
 import { createStyles, withStyles  } from '@material-ui/core/styles'
-import Web3 from 'web3';
+// import Web3 from 'web3';
+import axios from 'axios'
 
 import BackGround from '../../assets/background.jpg'
 
 
-window.Web3 = Web3;
-let { web3 } = window;
-let { ethereum } = window;  
+// window.Web3 = Web3;
+// let { web3 } = window;
+// let { ethereum } = window;  
 
 const styles = theme => 
   createStyles({
@@ -51,38 +52,91 @@ class Login extends Component {
   saveUserData = (token) => {
     localStorage.setItem(token)
   }
-  handleSubmit = async () => {
-      if (window.ethereum) {
-        web3 = new Web3(ethereum);
-        try {
-          ethereum.enable();
-          console.log('ethereum worked');
-          this.props.history.push('/useraction');
-        } catch (error) {
-          console.log('there is an error here');
+  // handleSubmit = async () => {
+      // if (window.ethereum) {
+      //   web3 = new Web3(ethereum);
+      //   try {
+      //     ethereum.enable();
+      //     console.log('ethereum worked');
+      //     this.props.history.push('/useraction');
+      //   } catch (error) {
+      //     console.log('there is an error here');
+      //   }
+      // }
+      // else if (typeof web3 !== 'undefined') {
+      //   web3 = new Web3(web3.currentProvider);
+      //   console.log('old metamask provider');
+      // }
+      // else {
+      //       // alert(
+      //       //   `please make sure that you have metamask account frist`
+      //       // );
+      //       (window.confirm('please make sure that you have metamask account frist'))
+      //     }
+    // }
+  
+    emailOnChange = (event) => {
+      const currentEmail = event.target.value
+      this.setState({ email: currentEmail })
+      const regex = new RegExp(/^([\w\-_.]+)@([\w]+)\.([\w]+)$/i)
+        if (regex.test(currentEmail)) {
+          this.setState({
+            emailError: false,
+          })
+        } 
+        else {
+          this.setState({
+            emailError: true,
+          })
         }
-      }
-      else if (typeof web3 !== 'undefined') {
-        web3 = new Web3(web3.currentProvider);
-        console.log('old metamask provider');
-      }
-      else {
-            // alert(
-            //   `please make sure that you have metamask account frist`
-            // );
-            (window.confirm('please make sure that you have metamask account frist'))
-          }
-          
     }
-  render(){
-    const {
-      isLoading
-    } = this.state;
-
-   const { classes } = this.props;
+  
+    passwordOnChange = (event) => {
+      const password = event.target.value
+      this.setState({ password })
+  
+      if (password.length >= 4) {
+        this.setState({ passwordError: false })
+      } 
+      else {
+        this.setState({ passwordError: true })
+      }
+    }
+  
+    handleSubmit = (event) => {
+      const { email, password } = this.state
+      const user = { 
+        'email': email, 
+        'password': password,
+      }
+  
+    axios.post('http://3.87.134.173:3000/authenticate', user)
+      .then((response) => {
+          this.setState({ isLoading: true })
+          localStorage.setItem('token', response.data.token)
+  
+          if(response.data.token === undefined){
+            alert('you are not assigned to our community .. Please register and try again ..');
+            this.props.history.push('/signup'); 
+          }
+          else {
+            this.props.history.push('/useraction');
+          }
+      })
+  }
+  
+    render(){
+      const {
+        email,
+        password,
+        emailError,
+        isLoading
+      } = this.state;
+  
+     const { classes } = this.props;
    
     return (
-    <Grid container className={classes.image}>
+      <Grid container className={classes.image}>
       <Card className={classes.root}>
         <CardHeader title="Login Form" />
           <TextField
@@ -92,6 +146,11 @@ class Login extends Component {
             fullWidth
             id="email"
             label="Email Address"
+            autoComplete="email"
+            autoFocus
+            value={email}
+            error={emailError}
+            onChange={this.emailOnChange}
           />
 
           <TextField
@@ -102,15 +161,17 @@ class Login extends Component {
             label="Password"
             type="password"
             id="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={this.passwordOnChange}
           />
           
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me" />
 
-          {/* <Link to="/useraction" > */}
-            <Button 
-          onClick={this.handleSubmit}
+          <Button 
+            onClick={this.handleSubmit} 
             disabled={isLoading}
             fullWidth 
             variant="contained" 
@@ -119,7 +180,6 @@ class Login extends Component {
               { isLoading && <i className="fa fa-refresh fa-spin"></i> }
             Sign In
           </Button>
-          {/* </Link> */}
 
         <Grid container>
           <Grid item xs>

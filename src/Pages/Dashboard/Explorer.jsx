@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     },
     media: {
         paddingTop: '56.25%',
-        width: 80,
+        width: 290,
         margin: 'auto'
     },
     expand: {
@@ -62,7 +62,7 @@ export default function Explorer() {
     };
  
     return (<div className={classes.explorer}>
- <Card className={classes.card}>
+        <Card className={classes.card}>
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites" >
                     <FavoriteIcon />
@@ -77,8 +77,8 @@ export default function Explorer() {
                 User Name
                </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your
-                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                    This impressive paella is a perfect party dish and
+                     a fun meal to cook 
                 </Typography>
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary" component="p">
@@ -128,6 +128,9 @@ export default function Explorer() {
                     <DialogContentText id="alert-dialog-description">
                         Let Google help apps determine location. This means sending anonymous location data to
                         Google, even when no apps are running.
+                        This impressive paella is a perfect party dish and
+                     a fun meal to cook together with your
+                    guests
                     </DialogContentText>
                     </DialogContent>
                     <DialogActions>
@@ -153,8 +156,7 @@ export default function Explorer() {
                 User Name
                </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your
-                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                    This impressive paella is a perfect party dish and a fun meal to cook
                 </Typography>
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary" component="p">
@@ -204,6 +206,9 @@ export default function Explorer() {
                     <DialogContentText id="alert-dialog-description">
                         Let Google help apps determine location. This means sending anonymous location data to
                         Google, even when no apps are running.
+                        This impressive paella is a perfect party dish and
+                        a fun meal to cook together with your
+                        guests
                     </DialogContentText>
                     </DialogContent>
                     <DialogActions>
@@ -229,8 +234,7 @@ export default function Explorer() {
                     Norhan Elsayed
                  </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your
-                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                    This impressive paella is a perfect party dish and a fun meal to cook
                 </Typography>
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary" component="p">
@@ -280,6 +284,9 @@ export default function Explorer() {
                     <DialogContentText id="alert-dialog-description">
                         Let Google help apps determine location. This means sending anonymous location data to
                         Google, even when no apps are running.
+                        This impressive paella is a perfect party dish and
+                        a fun meal to cook together with your
+                        guests
                     </DialogContentText>
                     </DialogContent>
                     <DialogActions>

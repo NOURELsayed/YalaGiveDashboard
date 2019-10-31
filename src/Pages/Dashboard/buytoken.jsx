@@ -53,6 +53,9 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    display: 'grid',
+    // maxWidth:300
+
   },
   textField: {
     marginLeft: theme.spacing(1),

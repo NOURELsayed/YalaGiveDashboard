@@ -41,9 +41,9 @@ export default function ValidationSteps() {
 /*         const charity = await Charity.Service.getName();
         console.log("charity", charity); */
     };
-    useEffect(() => {
-        mount();
-    });
+    // useEffect(() => {
+    //     mount();
+    // });
     return (
     <div className={classes.root}>
         <Grid container spacing={3}>
