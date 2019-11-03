@@ -6,7 +6,6 @@ import Theme from '../Helpers/Theme'
 import Error from '../Pages/Error/404'
 import Explorer from '../Pages/Dashboard/Explorer'
 import Leaderboard from "../Pages/Dashboard/leaderboard"
-import Header from "../components/header"
 import UserAction from "../Pages/verificationSteps/userAction"
 const Login = lazy(() => import ('../Pages/Auth/login'));
 const Signup = lazy(() => import ('../Pages/Auth/signup'));
@@ -32,7 +31,6 @@ class App extends Component {
     
     const routes = this.state.isAuth 
     ? ( 
-      // <Header title={title}>
       <Switch>
         <Route exact path="/" component={Explorer} />
         <Route exact path="/leaderboard" component={Leaderboard} />
@@ -42,7 +40,6 @@ class App extends Component {
         <Route path="/dashboard" render={props => <DashRoute {...props} logOut={this.logOut} />} />
         <Route component={Error} />
       </Switch>
-      // </Header>
  
     )
     : (
