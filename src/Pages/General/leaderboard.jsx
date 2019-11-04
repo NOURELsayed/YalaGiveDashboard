@@ -4,7 +4,7 @@ import Switch from '../../components/switch'
 import profilePic from "../../assets/images/profilepic.jpg"
 import Leaderboardpaper from "../../components/leaderboardpaper"
 import { Paper, Grid, createStyles, withStyles } from '@material-ui/core'
-
+import Header from '../../components/header'
 
 
 const styles = theme => 
@@ -88,6 +88,7 @@ class leaderboard extends Component {
     );
         return (
             <Fragment>
+                <Header/>
                 <div className={classes.root}>
                     <Switch />
                 </div>

@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Loader from '../components/loader'
 import Theme from '../Helpers/Theme'
 import Error from '../Pages/Error/404'
-import Explorer from '../Pages/Dashboard/Explorer'
-import Leaderboard from "../Pages/Dashboard/leaderboard"
+import Explorer from '../Pages/General/Explorer'
+import Leaderboard from "../Pages/General/leaderboard"
 import UserAction from "../Pages/verificationSteps/userAction"
+import TokenDetails from "../components/tokenDetails"
 const Login = lazy(() => import ('../Pages/Auth/login'));
 const Signup = lazy(() => import ('../Pages/Auth/signup'));
 const DashRoute = lazy(() => import ('./route'));
@@ -34,6 +35,7 @@ class App extends Component {
       <Switch>
         <Route exact path="/" component={Explorer} />
         <Route exact path="/leaderboard" component={Leaderboard} />
+        <Route exact path="/tokenDetails" component={TokenDetails} />
         <Route exact path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/useraction" component={UserAction } />
