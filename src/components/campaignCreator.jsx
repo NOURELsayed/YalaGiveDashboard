@@ -22,6 +22,9 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     marginLeft:'120px'
 },
+pic:{
+  marginLeft:110
+}
 }));
 
 export default function CampaignCreator() {
@@ -52,7 +55,7 @@ export default function CampaignCreator() {
 
     <Card className={classes.card}>
         <CardContent >
-        <img src={SmileIcon} alt="SmileIcon" width='70px' align='center'/>
+        <img src={SmileIcon} alt="SmileIcon" width='70px' className={classes.pic}/>
         </CardContent>
     </Card>
 

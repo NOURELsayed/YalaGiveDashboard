@@ -23,6 +23,11 @@ const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
   },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 280,
+  },
 }));
 
 
@@ -58,38 +63,43 @@ export default function TextFields() {
     </Typography>
     <div style={{ display: 'grid' }}>
 
-      <TextField
-        id="standard-name"
-        label="Name of the entity"
-        className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
-        margin="normal"
-      />
-      <TextField
-        id="standard-name"
-        label="Proof of licensing"
-        className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
-        margin="normal"
-      />
-      <TextField
-        id="standard-name"
-        label="Proof of licensing"
-        className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
-        margin="normal"
-      />
-           <TextField
-        id="standard-name"
-        label="CountryOfIncorporation "
-        className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
-        margin="normal"
-      />
+        <TextField
+          id="outlined-password-input"
+          label="NameOfTheEntity"
+          className={classes.textField}
+          type="password"
+          autoComplete="current-password"
+          margin="normal"
+          variant="outlined"
+        />
+       <TextField
+          id="standard-name"
+          label="ProofOfLicensing"
+          className={classes.textField}
+          type="password"
+          autoComplete="current-password"
+          margin="normal"
+          variant="outlined"
+        />
+             <TextField
+          id="standard-name"
+          label="CountryOfIncorporation"
+          className={classes.textField}
+          type="password"
+          autoComplete="current-password"
+          margin="normal"
+          variant="outlined"
+        />
+             <TextField
+          id="standard-name"
+          label="CountryOfIncorporation"
+          className={classes.textField}
+          type="password"
+          autoComplete="current-password"
+          margin="normal"
+          variant="outlined"
+        />
+
     </div>
     <div style={{ margin: 'auto' }}>
     <Button variant="contained" className={classes.button}>

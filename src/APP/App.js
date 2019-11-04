@@ -48,16 +48,12 @@ class App extends Component {
       <Switch>
         <Route exact path="/login" render={props => <Login {...props} logIn={this.logIn} />} />
         <Route path="/signup" component={Signup} />
+        <Route exact path="/" component={Explorer} />
+        <Route exact path="/leaderboard" component={Leaderboard} />
+        <Route exact path="/tokenDetails" component={TokenDetails} />
         <Route component={Error} />
       </Switch>
     )
-  //  : (
-  //     <Switch>
-  //     <Route exact path="/login" component={Login} />
-  //     <Route path="/signup" component={Signup} />
-  //     <Route component={Error} />
-  //   </Switch>
-  //   )
     return (
     <Suspense fallback={<Loader />}>
       <Theme>
