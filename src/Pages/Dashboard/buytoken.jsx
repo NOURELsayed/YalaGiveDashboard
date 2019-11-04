@@ -8,6 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import {TextField,Grid,Card,Button} from '@material-ui/core';
+import CardContent from '@material-ui/core/CardContent';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,19 +43,21 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     display: 'flex',
     height: 224,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+    height:500
   },
   Card: {
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    display: 'grid',
-    // maxWidth:300
+    // display: 'grid',
+    Width:'600px',
+    // height:800
 
   },
   textField: {
@@ -64,6 +67,9 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     margin: theme.spacing(1),
+    display:'grid',
+  },
+  CardContent:{
     display:'grid',
   }
 }));
@@ -97,6 +103,7 @@ export default function VerticalTabs() {
           <Typography variant="h4" component="h4">
           buy off chain
           </Typography>
+          <CardContent className={classes.CardContent}>
         <TextField
           id="standard-basic"
           className={classes.textField}
@@ -115,6 +122,7 @@ export default function VerticalTabs() {
           label="proof of payment"
           margin="normal"
         />
+         </CardContent>
         <Button variant="contained" color="primary" className={classes.button}>
         submit
       </Button>

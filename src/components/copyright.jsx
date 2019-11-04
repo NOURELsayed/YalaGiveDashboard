@@ -12,7 +12,7 @@ import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles(  ({
   youtube: {
-    color: '#eb3223'
+    color: '#eb3223',
   },
 
   facebook: {
@@ -25,7 +25,8 @@ const useStyles = makeStyles(  ({
 
   instagram: {
     color: 'black'
-  }
+  },
+
 
 }));
 export default function Copyright() {
@@ -36,7 +37,7 @@ export default function Copyright() {
   }
 
   return (<div>
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body2" color="textSecondary" align="center" >
       {'Copyright © '}
       <Link color="inherit" href={companyDetails.url}>
         {companyDetails.title}
@@ -62,7 +63,7 @@ export default function Copyright() {
         <FontAwesomeIcon icon={faInstagram} size="2x" />
       </a>
       <a
-        href="https://www.youtube.com/c/jamesqquick"
+        href="https://www.youtube.com/watch?v=YjTiJirh-VY"
         className={classes.youtube}
       >
         <FontAwesomeIcon icon={faYoutube} size="2x" />
