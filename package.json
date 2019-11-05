@@ -25,8 +25,7 @@
     "recompose": "^0.30.0",
     "styled-alert-component": "^4.0.0",
     "styled-components": "^4.4.0",
-    "ui": "^0.2.4",
-    "web3": "^1.2.2"
+    "ui": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",

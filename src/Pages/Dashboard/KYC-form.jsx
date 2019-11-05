@@ -3,16 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+
+import Uploadfile from '../../components/uploadbtn'
 
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200,
   },
   dense: {
     marginTop: 19,
@@ -28,21 +26,17 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
     width: 280,
   },
+  //  uploadbutton: {
+  //     margin: theme.spacing(1),
+  //     width: 280,
+  //   },
 }));
 
 
 export default function TextFields() {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    name: '',
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
-  });
 
-  const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value });
-  };
+
 
   return (
     
@@ -99,7 +93,7 @@ export default function TextFields() {
           margin="normal"
           variant="outlined"
         />
-
+      <Uploadfile/>
     </div>
     <div style={{ margin: 'auto' }}>
     <Button variant="contained" className={classes.button}>

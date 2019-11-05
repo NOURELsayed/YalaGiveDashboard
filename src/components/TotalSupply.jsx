@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './title';
 // import Ataa from '../services/attaaCoin.service'
-import { useState, useEffect } from 'react';
 const useStyles = makeStyles({
   depositContext: {
     flex: 1,

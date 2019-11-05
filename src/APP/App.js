@@ -7,11 +7,10 @@ import Error from '../Pages/Error/404'
 import Explorer from '../Pages/General/Explorer'
 import Leaderboard from "../Pages/General/leaderboard"
 import UserAction from "../Pages/verificationSteps/userAction"
-import TokenDetails from "../components/tokenDetails"
+import Compaigndetails from "../Pages/compaigns/index"
 const Login = lazy(() => import ('../Pages/Auth/login'));
 const Signup = lazy(() => import ('../Pages/Auth/signup'));
 const DashRoute = lazy(() => import ('./route'));
-const title = "Yalla Give"
 class App extends Component {
   state = {
     isAuth: false
@@ -35,7 +34,7 @@ class App extends Component {
       <Switch>
         <Route exact path="/" component={Explorer} />
         <Route exact path="/leaderboard" component={Leaderboard} />
-        <Route exact path="/tokenDetails" component={TokenDetails} />
+        <Route exact path="/compaigndetails" component={Compaigndetails} />
         <Route exact path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/useraction" component={UserAction } />
@@ -50,7 +49,7 @@ class App extends Component {
         <Route path="/signup" component={Signup} />
         <Route exact path="/" component={Explorer} />
         <Route exact path="/leaderboard" component={Leaderboard} />
-        <Route exact path="/tokenDetails" component={TokenDetails} />
+        <Route exact path="/compaigndetails" component={Compaigndetails} />
         <Route component={Error} />
       </Switch>
     )

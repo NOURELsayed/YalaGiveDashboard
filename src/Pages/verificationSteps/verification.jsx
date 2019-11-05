@@ -6,9 +6,6 @@ import { Grid, Paper, Typography, Icon } from '@material-ui/core'
 import VerificationTab from '../../components/verificationTab'
 import VerificationCards from '../../components/verificationCards'
 import Portfoliotab from '../../components/portfoliotab'
-import Ataa from '../../services/attaaCoin.service'
-// import Charity from '../services/NewTokens.service'
-import { useState, useEffect } from 'react';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -28,7 +25,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function ValidationSteps() {
     const classes = useStyles();
-    const [name, setName] = useState();
+/*     const [name, setName] = useState();
     // const [balance, setBalance] = useState();
     const mount = async () => {
         const account = await Ataa.Service.init();
@@ -40,10 +37,10 @@ export default function ValidationSteps() {
         console.log(name);
 /*         const charity = await Charity.Service.getName();
         console.log("charity", charity); */
-    };
+    //};
     // useEffect(() => {
     //     mount();
-    // });
+    // }); */
     return (
     <div className={classes.root}>
         <Grid container spacing={3}>
@@ -75,7 +72,7 @@ export default function ValidationSteps() {
             <Grid container spacing={3}>
                 <Grid item xs>
                     <Typography variant="h4" >
-                        {name}
+                        {/* {name} */}
                     </Typography>
                 </Grid>
                 <Grid item xs>

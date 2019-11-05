@@ -117,7 +117,7 @@ export default function Explorer() {
           </div>
         </CardContent>
         <Button variant="outlined" color="primary" 
-        component={Link} to="/tokenDetails"
+        component={Link} to="compaigndetails"
           className={classes.button}>
           Token details
             </Button>
@@ -176,7 +176,7 @@ export default function Explorer() {
         </CardContent>
         <Button variant="outlined" color="primary" 
           className={classes.button}
-          component={Link} to="/tokenDetails">
+          component={Link} to="compaigndetails">
           Token details
             </Button>
       </Card>
@@ -234,7 +234,7 @@ export default function Explorer() {
         </CardContent>
         <Button variant="outlined" color="primary" 
           className={classes.button}
-          component={Link} to="/tokenDetails">
+          component={Link} to="compaigndetails">
           Token details
             </Button>
       </Card>

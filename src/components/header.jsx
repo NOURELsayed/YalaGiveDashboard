@@ -7,7 +7,8 @@ import Button from '@material-ui/core/Button';
 import Logo from '../assets/images/logo.png'
 const useStyles = makeStyles(theme => ({
     headerbtn: {
-        margin: 'auto'
+        marginLeft: '950px'
+      
     },
 }))
 
@@ -18,11 +19,12 @@ export default function PrimarySearchAppBar() {
             <div>
                 <AppBar position="static" color="default">
                     <Toolbar>
-                        <img src={Logo} />
+                        <img src={Logo} alt="logo"/>
                         <div className={classes.headerbtn}>
-                        <Button color="inherit" component={Link} to="/login">Login</Button>
                         <Button color="inherit" component={Link} to="/leaderboard">LeaderBoard</Button>
                         <Button color="inherit"component={Link} to="/">Explorer</Button>
+                        <Button color="inherit" component={Link} to="/login">Login</Button>
+                        <Button color="inherit" component={Link} to="/signup">SignUp</Button>
                         </div>
                     </Toolbar>
                 </AppBar>
